@@ -25,9 +25,9 @@ POSTAMBLE_SUBMITTED_JOBS = """
 # -------------------------- ECFLOW STATUS FOR SUBMITTED JOBS ------------------------,
 
 wait                      # wait for background process to stop
-exit_hook                 # calling custom exit/cleaning code
 trap 0                    # Remove all traps
 ecflow_client --complete  # Notify ecFlow of a normal end
+exit_hook                 # calling custom exit/cleaning code
 exit 0
 """
 
