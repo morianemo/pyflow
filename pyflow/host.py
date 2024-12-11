@@ -28,6 +28,7 @@ wait                      # wait for background process to stop
 exit_hook                 # calling custom exit/cleaning code
 trap 0                    # Remove all traps
 ecflow_client --complete  # Notify ecFlow of a normal end
+%EMOS_TAIL:%  # for systematic mem check holder
 exit 0
 """
 
@@ -274,7 +275,7 @@ class Host:
         export PATH=%(ecf_path)s:$PATH
 
         export ECF_RID=$$  # record the process id. Also used for zombie detection
-
+        %EMOS_HEAD:%  # preliminary
         # Tell ecFlow we have started
         ecflow_client --init=$$
         """
